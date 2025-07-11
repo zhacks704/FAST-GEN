@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FAST GEN</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #111;
+    }
+
+    .navbar {
+      background-color: #000;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar h1 {
+      color: #fff;
+      font-size: 28px;
+      letter-spacing: 2px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 16px;
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 80px 20px;
+      background: url('https://images.unsplash.com/photo-1606813903690-a08c2c8e7d6c?auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+      color: white;
+      min-height: 90vh;
+    }
+
+    .hero h2 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px #000;
+    }
+
+    .hero p {
+      font-size: 20px;
+      max-width: 600px;
+      text-shadow: 1px 1px 3px #000;
+    }
+
+    .hero button {
+      margin-top: 30px;
+      padding: 12px 30px;
+      font-size: 16px;
+      background-color: #fff;
+      color: #000;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      background-color: #000;
+      color: #fff;
+      border: 1px solid #fff;
+    }
+
+    .products {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .products h3 {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .product {
+      background: #f9f9f9;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      padding-bottom: 20px;
+    }
+
+    .product img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .product h4 {
+      font-size: 20px;
+      margin: 15px 0 5px;
+    }
+
+    .product p {
+      color: #555;
+      margin: 5px 0;
+    }
+
+    .product a button {
+      background-color: #007bff;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .product a button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 20px 0;
+      font-size: 14px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 32px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <h1>FAST GEN</h1>
+    <div>
+      <a href="#">Home</a>
+      <a href="#products">Products</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Be Fast. Be Bold.</h2>
+    <p>FAST GEN brings power, style, and performance right to your doorstep.</p>
+    <button onclick="showMessage()">Shop Now</button>
+  </section>
+
+  <!-- Products Section -->
+  <section class="products" id="products">
+    <h3>Our Products</h3>
+    <div class="product-grid">
+
+      <!-- Product 1 -->
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1580841116210-89bbd8d4703d?auto=format&fit=crop&w=800&q=80" alt="Shoes">
+        <h4>Running Shoes</h4>
+        <p>High-performance shoes for speed and comfort.</p>
+        <p><strong>₹2,499</strong></p>
+        <a href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%20want%20to%20buy%20Running%20Shoes%20from%20FAST%20GEN" target="_blank">
+          <button>Buy Now</button>
+        </a>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1523381294911-8d3cead13475?auto=format&fit=crop&w=800&q=80" alt="T-Shirt">
+        <h4>Sport T-Shirt</h4>
+        <p>Breathable and stylish sportswear for all-day wear.</p>
+        <p><strong>₹999</strong></p>
+        <a href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%20want%20to%20buy%20Sport%20T-Shirt%20from%20FAST%20GEN" target="_blank">
+          <button>Buy Now</button>
+        </a>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1627643257264-4919c4a6c918?auto=format&fit=crop&w=800&q=80" alt="Shorts">
+        <h4>Active Shorts</h4>
+        <p>Lightweight and stretchable shorts for active lifestyle.</p>
+        <p><strong>₹799</strong></p>
+        <a href="https://wa.me/YOURNUMBER?text=Hi%2C%20I%20want%20to%20buy%20Active%20Shorts%20from%20FAST%20GEN" target="_blank">
+          <button>Buy Now</button>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 FAST GEN. All rights reserved.
+  </footer>
+
+  <!-- JS -->
+  <script>
+    function showMessage() {
+      alert("Thank you for choosing FAST GEN!");
+    }
+  </script>
+</body>
+</html>
