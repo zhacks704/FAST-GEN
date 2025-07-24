@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Light Off Effect</title>
+  <style>
+    :root {
+      --bg: #ffe5b4;
+      --bg-dark: #0b0b0b;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      overflow: hidden;
+      position: relative;
+      margin: 0;
+      font-family: sans-serif;
+      transition: background 0.5s ease;
+    }
+
+    input[type="checkbox"] {
+      display: none;
+    }
+
+    label {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: #fff;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      cursor: pointer;
+      z-index: 10;
+      transition: background 0.3s;
+    }
+
+    .doorway__door {
+      width: 200px;
+      height: 400px;
+      background: #d3c5ae;
+      border: 5px solid #a89c8c;
+      position: relative;
+      border-radius: 6px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 20px 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+      transition: filter 0.5s;
+    }
+
+    .door__panel {
+      height: 60px;
+      background: #b9aa94;
+      margin: 5px 0;
+      border-radius: 3px;
+    }
+
+    .door__handle {
+      width: 20px;
+      height: 20px;
+      background: #444;
+      border-radius: 50%;
+      align-self: flex-end;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+
+    .bear {
+      position: absolute;
+      left: calc(50% - 180px);
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100px;
+      height: 100px;
+      background: brown;
+      border-radius: 50%;
+      z-index: 5;
+    }
+
+    .bulb {
+      position: absolute;
+      top: -30px;
+      left: 40px;
+      width: 30px;
+      height: 50px;
+      background: #ffffcc;
+      border-radius: 50% 50% 40% 40%;
+      box-shadow: 0 0 20px #ffffcc;
+      transition: 0.4s ease;
+    }
+
+    input:checked ~ .doorway__door {
+      filter: brightness(0.3);
+    }
+
+    input:checked ~ .bear .bulb {
+      background: #444;
+      box-shadow: none;
+    }
+
+    /* ZAID HACKS glowing text */
+    .glow-text {
+      position: absolute;
+      font-size: 22px;
+      font-weight: bold;
+      text-align: center;
+      color: #fff;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: opacity 0.5s;
+      pointer-events: none;
+    }
+
+    input:checked ~ .glow-text {
+      opacity: 1;
+      text-shadow: 0 0 5px #00ffcc,
+                   0 0 10px #00ffcc,
+                   0 0 20px #00ffcc,
+                   0 0 40px #00ffcc;
+    }
+  </style>
+</head>
+<body>
+  <!-- Light Switch -->
+  <input type="checkbox" id="light-toggle">
+  <label for="light-toggle">💡</label>
+
+  <!-- Door -->
+  <div class="doorway__door">
+    <div class="door__panel"></div>
+    <div class="door__panel"></div>
+    <div class="door__panel"></div>
+    <div class="door__panel"></div>
+    <div class="door__handle"></div>
+  </div>
+
+  <!-- Bear and bulb -->
+  <div class="bear">
+    <div class="bulb"></div>
+  </div>
+
+  <!-- Glowing ZAID HACKS text -->
+  <div class="glow-text">ZAID HACKS</div>
+</body>
+</html>
